@@ -1,0 +1,32 @@
+{
+  "all": true,
+  "check-coverage": true,
+  "exclude": [
+    "**/*.{d,test,spec}.[jt]s?(x)",
+    "lib",
+    "node_modules"
+  ],
+  "extension": [
+    ".js",
+    ".ts",
+    ".tsx",
+    ".jsx"
+  ],
+  "include": [
+    "packages/**/*.[jt]s?(x)"
+  ],
+  "per-file": true,
+  "report-dir": ".nyc",
+  "reporter": [
+    "lcov",
+    "text-summary"
+  ],
+  "require": [
+    "esm",
+    "ts-node/register/transpile-only",
+    "tsconfig-paths/register",
+    "source-map-support/register"
+  ],
+  "temp-directory": ".nyc/output",
+  "sourceMap": true
+}

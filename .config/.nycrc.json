@@ -1,6 +1,7 @@
 {
   "all": true,
   "check-coverage": true,
+  "esModules": true,
   "exclude": [
     "**/*.{d,test,spec}.[jt]s?(x)",
     "lib",
@@ -16,17 +17,15 @@
     "packages/**/*.[jt]s?(x)"
   ],
   "per-file": true,
-  "report-dir": ".nyc",
+  "report-dir": ".nyc/coverage",
   "reporter": [
-    "lcov",
-    "text-summary"
+    "text-summary",
+    "lcov"
   ],
   "require": [
     "esm",
-    "ts-node/register/transpile-only",
-    "tsconfig-paths/register",
-    "source-map-support/register"
+    "./.config/.require.js"
   ],
-  "temp-directory": ".nyc/output",
-  "sourceMap": true
+  "sourceMap": false,
+  "temp-dir": ".nyc/output"
 }

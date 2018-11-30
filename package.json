@@ -4,9 +4,13 @@
     "tslib": "^1.9.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/register": "^7.0.0",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.10",
+    "babel-plugin-istanbul": "^5.1.0",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "mocha-parallel-tests": "^2.0.6-alpha.3",
@@ -21,8 +25,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "test": "mocha --opts .config/mocha.opts",
-    "test:parallel": "mocha-parallel-tests --opts .config/mocha.opts",
-    "test:coverage": "nyc test"
+    "test": "node -r esm -r ./.config/.require.js ./node_modules/mocha/bin/_mocha --opts .config/mocha.opts",
+    "test:parallel": "node -r esm -r ./.config/.require.js ./node_modules/mocha-parallel-tests/dist/bin/cli.js --opts .config/mocha.opts",
+    "test:coverage": "nyc npm run test"
   }
 }
